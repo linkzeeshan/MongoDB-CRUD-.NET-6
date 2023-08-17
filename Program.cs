@@ -1,13 +1,4 @@
-using MogoDbexample.Models;
-using MogoDbexample.Services;
-
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.Configure<BookStoreDatabaseSettings>(
-    builder.Configuration.GetSection("BookStoreDatabase"));
-
-builder.Services.AddSingleton<BooksService>();
 
 // Add services to the container.
 
@@ -24,8 +15,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
